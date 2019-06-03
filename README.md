@@ -3,7 +3,7 @@
 ## AUTHOR
 KARINGE KINYUA
 ## Description
-This is a web application that allows you to be in the know about everything happening in your neighbourhood. 
+This is a web application that allows you to know about everything happening in your neighbourhood. 
 
 Deployed application
 * in production
