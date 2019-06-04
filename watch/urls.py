@@ -20,3 +20,6 @@ urlpatterns = [
     url(r'^occupants/(?P<hood_id>\d+)', views.occupants, name='occupants'),
 
 ]
+
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
