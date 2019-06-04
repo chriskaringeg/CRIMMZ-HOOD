@@ -78,7 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                
+                'django.template.context_processors.media',                
             ],
         },
     },
@@ -88,7 +88,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 WSGI_APPLICATION = 'hood.wsgi.application'
 
-
+LOGIN_REDIRECT_URL='/'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
