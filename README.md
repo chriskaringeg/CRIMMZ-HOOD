@@ -1,26 +1,33 @@
 # CRIMMZ-HOOD
 
 ## AUTHOR
+
 KARINGE KINYUA
+
 ## Description
+
 This is a web application that allows you to know about everything happening in your neighbourhood. 
 
 Deployed application
 * in production
 
 ## Prerequisites
+
 * pip3 install -r requirements.txt
 
 ## Creating virtual environment
+
 8 python3.6 -m venv
 
 ## Running the server
+
 * python3.6 manage.py runserver
 
 Clone Repository
 https://github.com/chriskaringeg/CRIMMZ-HOOD.git
 
 # User Stories
+
 * Sign in with the application to start using.
 * Set up a profile about me and a general location and my neighborhood name.
 * Find a list of different businesses in my neighborhood.
@@ -30,6 +37,7 @@ https://github.com/chriskaringeg/CRIMMZ-HOOD.git
 * Only view details of a single neighborhood.
 
 ## Technologies Used
+
 * Python3.6
 * Django
 * HTML
@@ -41,7 +49,7 @@ https://github.com/chriskaringeg/CRIMMZ-HOOD.git
 * Run the web page once again incase of any errors, suggestions send an email: ckaringe@gmail.com 
 
 
-## license
+## License
 
 Copyright <2019> <KARINGE KINYUA>
 
