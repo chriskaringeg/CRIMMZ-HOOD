@@ -4,10 +4,15 @@
 <br>
 <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 <div class="c" style="padding-top: 24px">
-					
-			</div>
+
+</div>
 <div class="container">
-	
+	<div class="jumbotron">
+		<h1 class="text-center">CRIMMZ-HOOD</h1>
+		<p class="text-center">Know your hood </p>
+
+	</div>
+
 	<h4> <a href="{% url 'create_hood' %}"></a></h4>
 
 	<form class="" action="{% url 'search' %}">
@@ -35,7 +40,7 @@
 						</div>
 					</div>
 					<hr>
-                    <p>Occupants: {{hood.user.join.hood_id.id}}</p>
+					<p>Occupants: {{hood.user.join.hood_id.id}}</p>
 					<a class="btn btn-sm btn-success" href="{% url 'join' hood.id %}">Join</a>
 				</div>
 
