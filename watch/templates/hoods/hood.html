@@ -11,8 +11,9 @@
 <div class="container-fluid">
   <header>
     <hr>
- <h1 class="text-center" style="font-weight:bold">{{hood.hood_name}}</h1>
-    <h5 class="text-center"><small>{{hood.location}}</small></h5>  </header>
+    <h1 class="text-center" style="font-weight:bold">{{hood.hood_name}}</h1>
+    <h5 class="text-center"><small>{{hood.location}}</small></h5>
+  </header>
   <br>
   <div class="row">
     <div class="col-3">
@@ -21,7 +22,7 @@
       <a class="btn btn-sm btn-primary" href="{% url 'create_post' %}">Create Post</a>
       <a class="btn btn-sm btn-secondary" href="{% url 'add_business' %}">Add Business</a>
       <h4>Police and Healthcare</h4>
-        <p><small>0712345678</small></p>
+      <p><small>0712345678</small></p>
     </div>
 
     <div class="col-5">
@@ -29,56 +30,52 @@
       <hr>
       {%if posts%}
       {% for post in posts %}
-      <div class="media">
-        <div class="media-left media-top">
-          <img src="{{post.user.profile_photo.url}}" class="media-object" style="width:80px">
+      <div class="card" class="margin-top:10px;">
+        <h5 class="card-header">{{ post.title }}</h5>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">{{ post.content }}</p>
+          <a href="{% url 'delete_post' post.id %}" class="btn btn-sm btn-danger float-right">Delete</a>
+          <blockquote class="blockquote mb-0">
+            <footer class="blockquote-footer">Resident: <cite title="Source Title">{{ post.posted_by }}</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+      
+      {% endfor %}
+      <div>
+        {% else %}
+        <p>No Posts yet.</p>
+        <a class="btn btn-sm btn-secondary" href="{% url 'create_post' %}">Create Post</a>
+        {% endif %}
+      </div>
 
+
+    </div>
+    <div class="col-3">
+      <h4>Business</h4>
+      <hr>
+      {% if businesses %}
+      {% for biz in businesses %}
+      <div class="media">
+        {{businesses.b_name}}
+        <div class="media-left media-top">
+          <img class="img-fluid rounded-circle" src="{{biz.b_photo.url}}" class="media-object" style="height: 50px;
+                  width: 60px;">
         </div>
         <div class="media-body">
-          <h4 class="media-heading">{{ post.title }}</h4>
-          <p class="media-content">{{ post.content }}</p>
-          <small>Resident:{{ post.posted_by }}</small>
-          <hr>
+          <h4 class="media-heading" style="padding:10px; margin:5px">{{biz.b_name}}</h4>
+          <p>{{ biz.b_description }}</p>
+          <p>{{ biz.b_email}}</p>
         </div>
-
-        <a href="{% url 'delete_post' post.id %}" class="btn btn-sm btn-danger">Delete</a>
-        <hr>
-
       </div>
       {% endfor %}
-    <div>
-      {% else %}
-      <p>No Posts yet.</p>
-      <a class="btn btn-sm btn-secondary" href="{% url 'create_post' %}">Create Post</a>
-      {% endif %}
-    </div>
-
-
-  </div>
-  <div class="col-3">
-    <h4>Business</h4>
-    <hr>
-    {% if businesses %}
-    {% for biz in businesses %}
-    <div class="media">
-      {{businesses.b_name}}
-      <div class="media-left media-top">
-        <img class="img-fluid rounded-circle" src="{{biz.b_photo.url}}" class="media-object" style="height: 50px;
-                  width: 60px;">
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading" style="padding:10px; margin:5px">{{biz.b_name}}</h4>
-        <p>{{ biz.b_description }}</p>
-        <p>{{ biz.b_email}}</p>
+      <div>
+        {% else %}
+        <p>No Business</p>
+        <a class="btn btn-sm btn-secondary" href="{% url 'add_business' %}">Add Business</a>
+        {% endif %}
       </div>
     </div>
-    {% endfor %}
-    <div>
-      {% else %}
-      <p>No Business</p>
-      <a class="btn btn-sm btn-secondary" href="{% url 'add_business' %}">Add Business</a>
-      {% endif %}
-    </div>
   </div>
-</div>
-{% endblock %}
+  {% endblock %}
